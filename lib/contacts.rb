@@ -15,5 +15,14 @@ require 'pry'
   # }
   
 def remove_strawberry(contacts)
-
+  contacts.each do |person, info|
+    if person == "Freddy Mercury"
+      info.each do |key, value|
+        if value.class == Array
+          value.delete_if {|flavor| flavor.downcase == 'strawberry'}
+        end  
+      end  
+    end  
+  end
+contacts
 end
